@@ -5,7 +5,7 @@ import { AvoidSoftInput, useSoftInputAppliedOffsetChanged } from 'react-native-a
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Button from '../components/Button';
-import MultilineInput from '../components/MultilineInput';
+// import MultilineInput from '../components/MultilineInput';
 import SingleInput from '../components/SingleInput';
 import { styles as commonStyles } from '../consts/styles';
 
@@ -39,17 +39,15 @@ export const FormExample: React.FC = () => {
       showsVerticalScrollIndicator={true}
       style={commonStyles.stretch}
     >
+      <View style={styles.formContainer}>
+        <SingleInput placeholder="Single line input" />
+      </View>
       <View style={styles.logoContainer}>
         <Image
           resizeMode="contain"
           source={icon}
           style={styles.logo}
         />
-      </View>
-      <View style={styles.formContainer}>
-        <SingleInput placeholder="Single line input" />
-        <MultilineInput placeholder="Multiline input" style={styles.secondInput} />
-        <MultilineInput placeholder="Large multiline input" />
       </View>
       <View style={styles.submitButtonContainer}>
         <Button
@@ -79,9 +77,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 100,
   },
-  secondInput: {
-    height: 200,
-  },
+  // secondInput: {
+  //   height: 200,
+  // },
   submitButtonContainer: {
     alignItems: 'center',
     alignSelf: 'stretch',
